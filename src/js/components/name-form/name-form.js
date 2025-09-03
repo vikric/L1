@@ -44,14 +44,15 @@ customElements.define('name-form',
      * Called when the element is disconnected from the DOM.
      */
     disconnectedCallback () {
-      this.#form.removeEventListener('submit', (event) => this.handleSubmit(event))
+      this.#form.removeEventListener('submit',this.handleSubmit)
     }
 
     handleSubmit(event) {
       event.preventDefault()
-      const name = this.#name.value
-
-      console.log(event)
-            console.log(name)
+      let name = this.#name.value
+      this.dispatchEvent(new CustomEvent('nameSubmitted', {
+        detail: { name }
+      }))
+      this.#form.reset()
     }
   })
