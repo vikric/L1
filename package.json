@@ -16,5 +16,8 @@
   "devDependencies": {
     "@lnu/eslint-config": "^1.1.10",
     "vite": "^6.3.5"
+  },
+  "dependencies": {
+    "figlet": "^1.8.2"
   }
 }
