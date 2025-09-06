@@ -10,14 +10,16 @@ template.innerHTML = `
       margin: auto;
 	    background: rgba(214, 185, 151, 1);
       }
+      p {
+      font-size: 22px;
+      }
   </style>
   <div class="container">
     <name-form></name-form>
     <div class="message">
-
       <pre></pre>
     </div>
-    <h2></h2>
+    <p></p>
   </div>
 
 `

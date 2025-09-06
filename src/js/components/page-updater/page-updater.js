@@ -27,7 +27,7 @@ customElements.define('page-updater',
      * @type {HTMLInputElement}
      * Reference to the h2 element.
      */
-      #h2
+      #p
 
    
     /**
@@ -40,7 +40,7 @@ customElements.define('page-updater',
 
       this.#name = this.shadowRoot.querySelector('name-form')
       this.#pre = this.shadowRoot.querySelector('pre')
-      this.#h2 = this.shadowRoot.querySelector('h2') 
+      this.#p = this.shadowRoot.querySelector('p') 
     }
         
     /**
@@ -48,6 +48,7 @@ customElements.define('page-updater',
      */
     connectedCallback () {
       this.#name.addEventListener('nameSubmitted', this.createAscii.bind(this))
+      
     }
     
     /**
@@ -63,7 +64,7 @@ customElements.define('page-updater',
      */
     createAscii(event) {
       figlet.parseFont("Standard", standard);
-      figlet.text(event.detail.name,
+      figlet.text(`Hello ${event.detail.name}`,
         (err, data) => {
           if (err) {
             console.error(err)
@@ -101,7 +102,14 @@ customElements.define('page-updater',
      */
     setData(quote, data) {
       this.#pre.textContent = data
-      this.#h2.textContent = quote
+      this.#p.textContent = ''
+      
+      const strong = document.createElement('strong')
+      strong.textContent = 'What would Ron say? '
+      const textNode = document.createTextNode(quote)
+      this.#p.appendChild(strong)
+      this.#p.appendChild(textNode)
+            this.#p.classList.remove('hidden')
     }
     }
   )
