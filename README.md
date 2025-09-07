@@ -1,2 +1,2 @@
-# L1
-1DV610 Laboration 1
+# 1DV610 - L1
+First assignment in 1DV610
