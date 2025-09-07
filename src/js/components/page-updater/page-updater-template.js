@@ -8,9 +8,9 @@ template.innerHTML = `
       border-radius: 10px;
       max-width: 700px;
       margin: auto;
-	    background: rgba(214, 185, 151, 1);
-      }
-      p {
+      background: rgba(214, 185, 151, 1);
+    }
+    p {
       font-size: 22px;
       }
   </style>
